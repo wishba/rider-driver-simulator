@@ -2,6 +2,21 @@
 
 import { useState } from 'react'
 
+const keypadButtons = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '*',
+    '0',
+    '#',
+]
+
 export default function FaizPhonePage() {
     const [display, setDisplay] = useState('')
 
@@ -9,8 +24,7 @@ export default function FaizPhonePage() {
         setDisplay('')
     }
 
-    const handleKeypad = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const value = e.currentTarget.textContent ?? ''
+    const handleKeypad = (value: string) => {
         setDisplay((prev) => prev + value)
     }
 
@@ -26,78 +40,15 @@ export default function FaizPhonePage() {
             </button>
 
             <div className='grid grid-cols-3'>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    1
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    2
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    3
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    4
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    5
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    6
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    7
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    8
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    9
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    *
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    0
-                </button>
-                <button
-                    className='border cursor-pointer'
-                    onClick={handleKeypad}
-                >
-                    #
-                </button>
+                {keypadButtons.map((button) => (
+                    <button
+                        key={button}
+                        className='border cursor-pointer'
+                        onClick={() => handleKeypad(button)}
+                    >
+                        {button}
+                    </button>
+                ))}
             </div>
         </div>
     )
