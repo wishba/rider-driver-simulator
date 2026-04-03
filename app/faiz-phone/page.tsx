@@ -1,3 +1,88 @@
+'use client'
+
 export default function FaizPhonePage() {
-    return <div>Ini halaman Faiz Phone</div>
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        console.log(e.currentTarget.textContent)
+    }
+
+    return (
+        <div>
+            <button>ENTER</button>
+
+            <div className='grid grid-cols-3'>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    1
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    2
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    3
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    4
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    5
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    6
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    7
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    8
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    9
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    *
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    0
+                </button>
+                <button
+                    className='border'
+                    onClick={handleClick}
+                >
+                    #
+                </button>
+            </div>
+        </div>
+    )
 }
