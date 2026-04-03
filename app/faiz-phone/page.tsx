@@ -5,7 +5,11 @@ import { useState } from 'react'
 export default function FaizPhonePage() {
     const [display, setDisplay] = useState('')
 
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleEnter = () => {
+        setDisplay('')
+    }
+
+    const handleKeypad = (e: React.MouseEvent<HTMLButtonElement>) => {
         const value = e.currentTarget.textContent ?? ''
         setDisplay((prev) => prev + value)
     }
@@ -14,78 +18,78 @@ export default function FaizPhonePage() {
         <div>
             <p>{display}_</p>
 
-            <button>ENTER</button>
+            <button onClick={handleEnter}>ENTER</button>
 
             <div className='grid grid-cols-3'>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     1
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     2
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     3
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     4
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     5
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     6
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     7
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     8
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     9
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     *
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     0
                 </button>
                 <button
                     className='border'
-                    onClick={handleClick}
+                    onClick={handleKeypad}
                 >
                     #
                 </button>
