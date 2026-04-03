@@ -16,7 +16,7 @@ export default function FaizPhonePage() {
 
     return (
         <div>
-            <p>{display}_</p>
+            <p className='overflow-x-hidden'>{display}_</p>
 
             <button onClick={handleEnter}>ENTER</button>
 
