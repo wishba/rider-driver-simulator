@@ -1,12 +1,19 @@
 'use client'
 
+import { useState } from 'react'
+
 export default function FaizPhonePage() {
+    const [display, setDisplay] = useState('')
+
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log(e.currentTarget.textContent)
+        const value = e.currentTarget.textContent ?? ''
+        setDisplay((prev) => prev + value)
     }
 
     return (
         <div>
+            <p>{display}_</p>
+
             <button>ENTER</button>
 
             <div className='grid grid-cols-3'>
